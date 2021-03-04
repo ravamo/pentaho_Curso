@@ -1,0 +1,44 @@
+<Schema name="sport">
+  <Cube name="sport" visible="true" cache="true" enabled="true">
+    <Table name="ft_injuries">
+    </Table>
+    <Dimension visible="true" foreignKey="date" highCardinality="false" name="dim_time">
+      <Hierarchy visible="true" hasAll="true" primaryKey="dateid">
+        <Table name="dim_time">
+        </Table>
+        <Level name="year" visible="true" column="year" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="month" visible="true" column="month" nameColumn="month_desc" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="week" visible="true" column="week_day" nameColumn="week_day_desc" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension visible="true" foreignKey="id_person" highCardinality="false" name="dim_persons">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id">
+        <Table name="dim_persons">
+        </Table>
+        <Level name="version" visible="true" column="version" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="date_from" visible="true" column="date_from" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="date_to" visible="true" column="date_to" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="entity_id" visible="true" column="entity_id" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="last_name" visible="true" column="last_name" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension visible="true" foreignKey="id_bodypart" highCardinality="false" name="dim_bodyparts">
+      <Hierarchy visible="true" hasAll="true" primaryKey="id">
+        <Table name="dim_bodyparts">
+        </Table>
+        <Level name="bodypart" visible="true" column="bodypart" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="Unit Sales" column="quantity" formatString="Standard" aggregator="sum">
+    </Measure>
+  </Cube>
+</Schema>

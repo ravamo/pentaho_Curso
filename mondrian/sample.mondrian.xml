@@ -1,0 +1,30 @@
+<Schema name="Sport">
+  <Cube name="sport" visible="true" cache="true" enabled="true">
+    <Table name="ft_injuries" alias="">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="date" name="dim_time" description="Diemnsion tiempo">
+      <Hierarchy name="week" visible="true" hasAll="true" primaryKey="dateid">
+        <Table name="dim_time" alias="dt">
+        </Table>
+        <Level name="year" visible="true" column="year" type="Integer" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="month" visible="true" column="month" nameColumn="month_desc" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="week" visible="true" column="week_day" nameColumn="week_day_desc" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_bodypart" name="bodypart">
+      <Hierarchy name="dafult" visible="true" hasAll="true" primaryKey="id">
+        <Table name="dim_bodyparts" alias="db">
+        </Table>
+        <Level name="bodypart" visible="true" column="id" nameColumn="bodypart" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="sales count" column="sum_injury_type" aggregator="count" visible="true">
+    </Measure>
+    <Measure name="sales sum" column="sum_injury_type" aggregator="sum" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
