@@ -17,8 +17,7 @@ Vamos a tener dos carpetas :
 * Chapter08 (Tranformaciones para la carga de datos en base de datos)
 * files (ejemplos de varias transformaciones variadas)
 # Mondrian
-ejemplo de cubo de mondrian y documentacion
-mondrian/ 
-sample.mondrian.xml (vubo estandar)
-Sesion4-OLAP.pdf
-sport.xml (cubos virtuales) 
+ejemplo de cubo de mondrian y documentacion 
+* sample.mondrian.xml (vubo estandar)
+* Sesion4-OLAP.pdf
+* sport.xml (cubos virtuales) 
