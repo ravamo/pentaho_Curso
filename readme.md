@@ -6,7 +6,7 @@ Vamos a tener dos carpetas :
 * mondrian, recursos para la creacion de cubos.
 
 
-## etl
+## ETL
 * Chapter01 (primera transformacion simple)
 * Chapter02 (transformacion simple con parametros y varibles)
 * Chapter03 (transformacion para añadir informacion)
@@ -19,6 +19,6 @@ Vamos a tener dos carpetas :
 # Mondrian
 ejemplo de cubo de mondrian y documentacion
 mondrian/ 
-sample.mondrian.xml
+sample.mondrian.xml (vubo estandar)
 Sesion4-OLAP.pdf
-sport.xml
+sport.xml (cubos virtuales) 
